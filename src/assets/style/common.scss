@@ -1,6 +1,7 @@
 html,body,#app{
   height:100%;
   width:100%;
+  overflow: hidden;
 }
 // 首页
 #app {
@@ -68,15 +69,66 @@ html,body,#app{
     .leftCol{
       height: 100%;
       background: rgba(0,0,0,0.5); 
-      flex:0 0 25%;
+      flex:0 0 20%;
       animation: leftMenu 1s cubic-bezier(0.74,0.43,0.75,0.47) 3s 1 normal;
-   
+      box-sizing: border-box;
+      padding: 45px;
+      .header-info{
+        .header-img{
+          text-align: center;
+          img{
+            width:142px;
+            height:142px;
+            border-radius: 50%;
+            object-fit:cover;
+            cursor: pointer;
+          }
+          p{
+            color:#fff;
+            margin-top:10px;
+            cursor: pointer;
+            &:hover{
+              color:#0F9FB4;
+            }
+          }
+        }
+        .header-motto{
+          padding:30px;
+          // background:#ccc;
+          // margin-top:30px;
+          color:#fff;
+          line-height:1.5;
+          text-align: center;
+        }
+        .header-nav{
+            text-align:center;
+            color:#fff;
+            input{
+              border:none;
+              color:#fff;
+              border-bottom: 1px solid #0F9FB4;
+              background:none;
+              line-height: 2;
+              &::-webkit-input-placeholder{
+                color: #ffffff;
+              } 
+            }
+            dt,dd{
+              margin-top:10px;
+              & span:hover{
+                cursor: pointer;
+                color:#0F9FB4;
+              }
+            }
+        }
+      }
     }
     .rightCol{
       flex-grow:1;
       height: 100%;
-      background: red;
+      // background: red;
       animation: rightMenu 1s cubic-bezier(0.74,0.43,0.75,0.47) 3s 1 normal;
+      position: relative;
     }
     @keyframes leftMenu {
       0%{

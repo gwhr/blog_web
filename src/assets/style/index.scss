@@ -1,0 +1,39 @@
+.index{
+    .index-li{
+        width:80%;
+        background: #f6f6f6;
+        border-radius: 1rem;
+        box-shadow: 0 0 0.6rem 0 #aaa;
+        cursor: pointer;
+        height:200px;
+        margin:70px auto;
+        &:hover{
+            background: rgba(96,126,121,.18);
+        }
+        padding:0 20px;
+        h1{
+            height:5rem;
+            display:flex;
+            justify-content: space-between;
+            box-shadow: 0 0.5rem 0.5rem -0.5rem #aaa;
+            line-height:5rem;
+            .title{
+                font-family: Georgia,serif;
+                font-size: 2.5rem;
+                letter-spacing: .05rem;
+                color: #607e79;
+                flex:0.8;
+            }
+            .time{
+                flex:0.2;
+                font-size:12px;
+                text-align: center;
+            }
+        }
+        .content{
+            padding:20px 0;
+            color:#7b7b7b;
+            line-height: 2;
+        }
+    }
+}

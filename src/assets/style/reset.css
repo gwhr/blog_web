@@ -6,7 +6,8 @@ footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
   padding: 0;
   border: 0;
   vertical-align: baseline;
-  font-family: 'microsoft Yahei';
+  font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,

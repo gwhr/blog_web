@@ -2,12 +2,13 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-03 22:04:13
- * @LastEditTime: 2019-09-10 15:37:33
+ * @LastEditTime: 2019-12-17 17:30:14
  * @LastEditors: Please set LastEditors
  -->
 <template>
   <div id="app">
-    <router-view/>
+      <router-view></router-view>
+    
     <div class="bgImg">
       <!-- <img :src="glogalImg.bg" alt="" > -->
     </div>
@@ -20,7 +21,7 @@ export default {
   name: 'App',
   data(){
     return {
-        message:"不忘初心，方得始终",
+        message:"天行健，君子以自强不息",
     }
   },
   mounted(){

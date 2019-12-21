@@ -1,0 +1,87 @@
+.post-card{
+    min-height: 100px;
+    padding: 35px;
+    // background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    width:70%;
+    margin:50px auto;
+}
+.post-card{
+    blockquote{
+        color: #666;
+        padding: 1px 23px;
+        margin: 22px 0;
+        border-left: 4px solid #cbcbcb;
+        background-color: #f8f8f8;
+        line-height:1.5;
+    }
+    p{
+        margin:1rem;
+        color: #666;
+        line-height:2;
+    }
+    em{
+        color: #666;
+        font-style: italic;
+        line-height:2;
+    }
+    a{
+        text-decoration:underline ;
+        line-height:1.5;
+        display: inline-block;;
+    }
+    h2{
+        margin-top: 2em;
+    }
+    h3{
+        font-size: 1.9rem;
+        margin-top: 1.9em;
+    }
+    img{
+        max-width: 100%;
+    }
+    strong{
+        color: #3f3f3f;
+        padding: 0 .15rem;
+        font-weight: bold;
+    }
+    pre{
+        word-wrap: normal;
+        word-break: break-all;
+        white-space: pre;
+        overflow-x: scroll;
+        overscroll-behavior-x: contain;
+        margin-top: 0;
+        margin-bottom: 20px;
+        border-radius: 4px;
+        z-index: 0;
+        padding: 1em;
+        line-height: 1.5;
+        color: #ccc;
+        background: #2d2d2d;
+    }
+    .language-js{
+        font-family: Consolas,Monaco,"Andale Mono","Ubuntu Mono",monospace;
+        color: #cd9999;
+    }
+    .hljs-keyword, .hljs-selector-tag, .hljs-subst {
+        color: #cc99cd;
+        font-weight: normal;
+    }
+    // .hljs-constructor{
+    //     color: #f8c555;
+    // }
+    // .hljs-params{
+    //     color:#7ec699
+    // }
+    .hljs-comment, .hljs-quote {
+        color: rgba(126, 198, 153, 0.6);
+        font-style: italic;
+    }
+    code{
+        background: rgba(96,126,121,.2);
+        padding: 0 .4rem;
+        border-radius: .2rem;
+    }
+}
