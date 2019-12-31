@@ -1,0 +1,6 @@
+@mixin cursor {
+    cursor: pointer;
+}
+@mixin fontSize ($color:#7b7b7b){
+    color: $color;
+}

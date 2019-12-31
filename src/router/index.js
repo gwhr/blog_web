@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-03 22:04:13
- * @LastEditTime : 2019-12-21 09:44:25
+ * @LastEditTime : 2019-12-31 17:56:20
  * @LastEditors  : Please set LastEditors
  */
 import Vue from 'vue'
@@ -31,9 +31,24 @@ export default new Router({
           component:IMPORT('file/file'),
         },
         {
-          path:'/article',
+          path:'/classify',
+          meta:{index:3},
+          component:IMPORT('classify/classify'),
+        },
+        {
+          path:'/tags',
+          meta:{index:4},
+          component:IMPORT('tags/tags'),
+        },
+        {
+          path:'/article/:id',
           meta:{index:5},
           component:IMPORT('article/article'),
+        },
+        {
+          path:'/article/edit/:id',
+          meta:{index:5},
+          component:IMPORT('classify/classify'),
         },
       ]
     },

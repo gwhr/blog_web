@@ -34,11 +34,11 @@ export default {
                 },
                 {
                     tit:'分类',
-                    link:'/'
+                    link:'/classify'
                 },
                 {
                     tit:'标签',
-                    link:'/'
+                    link:'/tags'
                 },
             ]
         }

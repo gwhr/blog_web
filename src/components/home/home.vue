@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-10 15:45:49
- * @LastEditTime : 2019-12-21 13:47:27
+ * @LastEditTime : 2019-12-31 18:00:33
  * @LastEditors  : Please set LastEditors
  -->
 <template>
@@ -15,6 +15,9 @@
                 <router-view></router-view>
             </transition>
             
+        </div>
+        <div class="login">
+
         </div>
     </div>
 </template>
