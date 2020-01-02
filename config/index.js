@@ -10,7 +10,17 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      proxy: {
+          '/api': {    
+              target: 'https://www.cnblogs.com/hanguidong/ajax/HistoryToday.aspx',  // 接口域名
+              changeOrigin: false,  //是否跨域
+              pathRewrite: {
+                  '^/api': ''   
+              }
+          }
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

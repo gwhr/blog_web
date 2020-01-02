@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-03 22:04:13
- * @LastEditTime : 2019-12-21 15:50:30
+ * @LastEditTime : 2020-01-02 13:49:02
  * @LastEditors  : Please set LastEditors
  */
 // The Vue build version to load with the `import` command
@@ -19,6 +19,7 @@ import 'highlight.js/styles/github.css';
 import 'perfect-scrollbar/css/perfect-scrollbar.css'
 import '@/assets/style/article.scss'; 
 import hzqingVueTimeline from 'hzqing-vue-timeline'
+import axios from 'axios'
 Vue.use(hzqingVueTimeline)
 marked.setOptions({
     renderer: new marked.Renderer(),

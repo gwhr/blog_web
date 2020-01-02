@@ -136,16 +136,16 @@
             margin-bottom:20px;
             @include cursor;
             @include fontSize;
-            &:hover{
-                color:#cbcbcb;
-            }
             .listLine{
                 flex:1;
                 border-bottom:1px solid #7b7b7b;
                 transform:translateY(-50%) ;
                 margin:0 50px;
                 transition: all 0.5s;
-                &:hover{
+            }
+            &:hover{
+                color:#cbcbcb;
+                .listLine{
                     margin:0 20px;
                 }
             }
