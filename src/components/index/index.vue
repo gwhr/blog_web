@@ -1,18 +1,16 @@
 <template>
     <div class='index'>
         <ul>
-            <li class='index-li' @click="toArticle">
+            <li class='index-li' @click="toArticle(item._id)" v-for="(item,index) in articleList" :key="index">
                 <h1>
                     <span class='title'>
-                        多边形的音乐动效
+                        {{item.title}}
                     </span>
                     <span class='time'>
-                        2019/03/21/10:17:44
+                        {{item.createTime}}
                     </span>
                 </h1>
-                <div class="content">
-                    在调试内核crash问题时打开了lockup相关的kernel CONFIG，重新编译FW后发现有个内核模块insmod失败在调试内核crash问题时打开了lockup相关的kernel CONFIG，重新编译FW后发现有个内核模块insmod失败在调试内核crash问题时打开了lockup相关的kernel CONFIG，重新编译FW后发现有个内核模块insmod失败在调试内核crash问题时打开了lockup相关的kernel CONFIG，重新编译FW后发现有个内核模块insmod失败
-                </div>
+                <div class="content" v-html='item.content'></div>
             </li>
             <li class='index-li'>
 
@@ -24,13 +22,27 @@
 export default {
     data(){
         return{
-
+            articleList:[]
         }
     },
+    mounted(){
+        this.getList();
+    },
     methods:{
-        toArticle(){
+        toArticle(id){
             this.$router.push({
                 path:'/article'
+            })
+        },
+        // 获取列表
+        getList(){
+            let params = {
+                page:1,
+                size:8
+            }
+            this.globalApi.api.article.articleList(params)
+            .then(value=>{
+                this.articleList = value;
             })
         }
     }

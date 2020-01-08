@@ -11,15 +11,15 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      proxy: {
-          '/api': {    
-              target: 'https://www.cnblogs.com/hanguidong/ajax/HistoryToday.aspx',  // 接口域名
-              changeOrigin: false,  //是否跨域
-              pathRewrite: {
-                  '^/api': ''   
-              }
-          }
-      }
+      // proxy: {
+      //     '/api': {    
+      //         target: 'http://localhost:3000',  // 接口域名
+      //         changeOrigin: false,  //是否跨域
+      //         pathRewrite: {
+      //             '^/api': ''   
+      //         }
+      //     }
+      // }
     },
 
     // Various Dev Server settings

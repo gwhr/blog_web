@@ -10,6 +10,7 @@
 export default {
     computed:{
         compiledMarkdown: function (val) {
+            console.log(this.marked(this.input))
             return this.marked(this.input)
         }
     },

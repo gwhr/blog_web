@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-03 22:04:13
- * @LastEditTime : 2020-01-02 13:49:02
+ * @LastEditTime : 2020-01-08 14:14:33
  * @LastEditors  : Please set LastEditors
  */
 // The Vue build version to load with the `import` command
@@ -20,6 +20,7 @@ import 'perfect-scrollbar/css/perfect-scrollbar.css'
 import '@/assets/style/article.scss'; 
 import hzqingVueTimeline from 'hzqing-vue-timeline'
 import axios from 'axios'
+import globalApi from '@/utils/globalApi.js'
 Vue.use(hzqingVueTimeline)
 marked.setOptions({
     renderer: new marked.Renderer(),
@@ -35,6 +36,8 @@ marked.setOptions({
     smartypants: false
 });
 Vue.prototype.marked = marked;
+// 全局API
+Vue.prototype.globalApi = globalApi;
 /**
  * @description: 全局组件
  * @param {type} 
