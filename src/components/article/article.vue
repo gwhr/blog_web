@@ -1,24 +1,54 @@
 <template>
     <div>
         <article class="post-card">
-            <div v-html="compiledMarkdown"></div>
+            <div class="article_title">
+                {{article.title}}
+            </div>
+            <div class="article_time">
+                <span>
+                    {{timestampToTime(article.createTime)}}
+                </span>
+                <div class="article_classify">
+                    <span>
+                        {{article.classify}}
+                    </span>
+                    <span>
+                        {{article.tag}}
+                    </span>
+                      
+                </div>
+            </div>
+            <div v-html="article.content"></div>
         </article>
-        <textarea name="" id="" cols="100" rows="10" v-model="input" style="width:100%"></textarea>
     </div>
 </template>
 <script>
 export default {
     computed:{
-        compiledMarkdown: function (val) {
-            console.log(this.marked(this.input))
-            return this.marked(this.input)
-        }
+        // article: function (val) {
+        //     console.log(this.marked(this.input))
+        //     return this.marked(this.input)
+        // }
     },
     created() {
+        this.articleDetails();
     },
     data(){
         return {
-            input:'> 我又滚回来了，以后大概也许每周会写一篇博客，就算是一篇水文也行，就像下面要写的这篇，**多边形的音乐动效**，姑且就叫这个名字，就是基于`audio`的`AnalyserNode.getByteTimeDomainData() `API，再结合以前做过的**多变形Demo**做出来的一个小玩意，说实话，最后做出来，感觉效果挺一般的，不够惊艳。'
+            article:'',
+        }
+    },
+    methods:{
+        // 文章详情
+        articleDetails(){
+            let params = {
+                id:this.$route.params.id
+            }
+            this.globalApi.api.article.articleDetails(params)
+            .then(value=>{
+                console.log(value)
+                this.article = value;
+            })
         }
     }
 }

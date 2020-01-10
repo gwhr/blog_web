@@ -2,23 +2,30 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-10 15:45:49
- * @LastEditTime : 2020-01-08 13:51:42
+ * @LastEditTime : 2020-01-10 17:22:52
  * @LastEditors  : Please set LastEditors
  -->
 <template>
     <div class="contain">
-        <div class="leftCol">
+        <div :class="['leftCol',{'left_isshow':leftSHow}]">
             <BaseLeftNav></BaseLeftNav> 
         </div>
         <div class="rightCol" id="rightCol">
             <transition :name="transitionName">
                 <router-view></router-view>
             </transition>
-            
-        </div>
-        <div class="login">
+            <div>
+                <span>
 
+                </span>
+            </div>
         </div>
+        <span class="login" @click="login">
+                <i class="iconfont icon-login-"></i>
+            </span>
+        <!-- <span class="">
+
+        </span> -->
     </div>
 </template>
 <script>
@@ -27,7 +34,15 @@ import PerfectScrollbar from 'perfect-scrollbar';
 export default {
     data(){
         return {
-            transitionName:'slide-right'
+            transitionName:'slide-right',
+            leftSHow:false
+        }
+    },
+    methods: {
+        login(){
+            this.$router.push({
+                path:'/login'
+            })
         }
     },
     mounted(){
@@ -45,6 +60,11 @@ export default {
                 this.transitionName = 'slide-right'
             }else{
                 this.transitionName = 'slide-left'
+            }
+            if(to.path.includes('edit')){
+                this.leftSHow = true;
+            }else{
+                this.leftSHow = false;
             }
         }
     },

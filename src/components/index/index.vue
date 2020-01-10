@@ -1,7 +1,7 @@
 <template>
     <div class='index'>
         <ul>
-            <li class='index-li' @click="toArticle(item._id)" v-for="(item,index) in articleList" :key="index">
+            <li class='index-li' @click="toArticle(item.id)" v-for="(item,index) in articleList" :key="index">
                 <h1>
                     <span class='title'>
                         {{item.title}}
@@ -31,7 +31,10 @@ export default {
     methods:{
         toArticle(id){
             this.$router.push({
-                path:'/article'
+                name:`article`,
+                params:{
+                    id
+                }
             })
         },
         // 获取列表

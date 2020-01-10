@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-03 22:04:13
- * @LastEditTime : 2020-01-08 14:14:33
+ * @LastEditTime : 2020-01-09 17:20:18
  * @LastEditors  : Please set LastEditors
  */
 // The Vue build version to load with the `import` command
@@ -21,7 +21,10 @@ import '@/assets/style/article.scss';
 import hzqingVueTimeline from 'hzqing-vue-timeline'
 import axios from 'axios'
 import globalApi from '@/utils/globalApi.js'
-Vue.use(hzqingVueTimeline)
+import tool from "@/utils/tool.js"
+import "@/assets/iconfont/iconfont.css"
+Vue.use(hzqingVueTimeline);
+Vue.use(tool);
 marked.setOptions({
     renderer: new marked.Renderer(),
     highlight: function(code,language) {

@@ -1,5 +1,5 @@
 @import "tool.scss";
-.post-card,.classify-card{
+.post-card,.classify-card,.edit-card{
     min-height: 100px;
     padding: 35px;
     // background: #fff;
@@ -8,7 +8,7 @@
     width:70%;
     margin:50px auto;
 }
-.post-card{
+.post-card,.edit-card{
     blockquote{
         color: #666;
         padding: 1px 23px;
@@ -60,7 +60,7 @@
         padding: 1em;
         line-height: 1.5;
         color: #ccc;
-        background: #2d2d2d;
+        // background: #2d2d2d;
     }
     .language-js{
         font-family: Consolas,Monaco,"Andale Mono","Ubuntu Mono",monospace;
@@ -84,6 +84,38 @@
         background: rgba(96,126,121,.2);
         padding: 0 .4rem;
         border-radius: .2rem;
+    }
+    .article_title{
+        font-weight: 400;
+        font-style: normal;
+        text-align: center;
+        font-size:1.9rem;
+        padding-bottom: .8rem;
+        box-shadow: 0 0.5rem 0.5rem -0.5rem #aaa;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+    .article_time{
+        padding-top:0.8rem;
+        display:flex;
+        justify-content: center;
+        position: relative;
+        .article_classify{
+            position: absolute;
+            right:0;
+            top:0;
+            bottom:0;
+            display:flex;
+            align-items:center;
+            span{
+                padding:0 0.5rem;
+                &:first-child{
+                    border-right:0.2rem;
+                    box-shadow: 0.5rem 0 0.3rem -0.3rem #aaa;
+                }
+            }
+        }
     }
 }
 // 分类
@@ -149,6 +181,95 @@
                     margin:0 20px;
                 }
             }
+        }
+    }
+}
+// 登录页面
+.login_page{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:100%;
+    .login_div{
+        // width:20rem;
+        padding:3rem;
+        border-radius:0.5rem;
+        input{
+            border:none;
+            background:transparent;
+            padding:0.3rem;
+            box-shadow: 0 0.5rem 0.5rem -0.5rem #aaa;
+            width:240px;
+        }
+        .login_form{
+            margin-bottom:20px;
+        }
+        .login_btns{
+            display:flex;
+            justify-content: center;
+            div{
+                margin-right:20px;
+                padding:3px 20px;
+                background:#7b7b7b;
+                color:#fff;
+                border-radius:0.5rem;
+                @include cursor;
+            }
+        }
+    }
+}
+// 后台列表页
+.backStage_div{
+    .backStage_list,.backStage_content{
+        display:flex;
+        justify-content: space-around;
+        background: transparent;
+        color: #607e79;
+    }
+    .backStage_list{
+        margin-bottom:10px;
+        font-size:14px;
+    }
+    .backStage_content{
+        color:#666;
+        background:rgba(96,126,121,.28);
+        padding:10px 0;
+        font-size:14px;
+        @include cursor;
+        &:hover{
+            background:rgba(96,126,121,.58);
+        }
+        &:nth-child(2n){
+            background:rgba(96,126,121,.37);
+            &:hover{
+                background:rgba(96,126,121,.57);
+            }
+        }
+        .backStage_make{
+            span{
+                margin-right:10px;
+            }
+        }
+    }
+}
+// 编辑页面
+.edit_div{
+    width:100%;
+    height: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    display:flex;
+    justify-content: space-around;
+    padding:0 20px;
+    .edit-card{
+        width:40%;
+        .edit_content{
+            width:100%;
+            height:100%;
+            border:none;
+            box-shadow: 0.5rem 0 0.5rem -0.5rem #aaa;
+            background:transparent;
         }
     }
 }

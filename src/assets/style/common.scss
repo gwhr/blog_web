@@ -1,3 +1,4 @@
+@import'./tool.scss';
 html,body,#app{
   height:100%;
   width:100%;
@@ -66,6 +67,10 @@ html,body,#app{
     display:flex;
     height:100%;
     width:100%;
+    position: relative;
+    .left_isshow{
+      display: none;
+    }
     .leftCol{
       height: 100%;
       background: rgba(0,0,0,0.5); 
@@ -129,6 +134,30 @@ html,body,#app{
       // background: red;
       animation: rightMenu 1s cubic-bezier(0.74,0.43,0.75,0.47) 3s 1 normal;
       position: relative;
+      
+    }
+    .login{
+      position: absolute;
+      right:2rem;
+      top:50%;
+      width:3.5rem;
+      height:3.5rem;
+      transform: translateY(-50%);
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      border-radius:50%;
+      box-shadow: 0 0 0.6rem 0 #aaa;
+      background: #f6f6f6;
+      transition: all 0.5s;
+      @include cursor;
+      .iconfont{
+        font-size:1.8rem;
+      }
+      &:hover{
+        background: rgba(96,126,121,.3);
+      }
+      
     }
     @keyframes leftMenu {
       0%{
