@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-10 15:45:49
- * @LastEditTime : 2020-01-10 17:22:52
+ * @LastEditTime : 2020-01-13 13:52:22
  * @LastEditors  : Please set LastEditors
  -->
 <template>
@@ -22,10 +22,10 @@
         </div>
         <span class="login" @click="login">
                 <i class="iconfont icon-login-"></i>
-            </span>
-        <!-- <span class="">
-
-        </span> -->
+        </span>
+        <span class="home">
+                <i class="iconfont icon-1"></i>
+        </span>
     </div>
 </template>
 <script>

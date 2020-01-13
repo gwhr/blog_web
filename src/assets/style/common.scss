@@ -136,7 +136,7 @@ html,body,#app{
       position: relative;
       
     }
-    .login{
+    .login,.home{
       position: absolute;
       right:2rem;
       top:50%;
@@ -159,6 +159,10 @@ html,body,#app{
       }
       
     }
+    .home{
+      top:60%;
+      transform: translateY(-50%);
+    }
     @keyframes leftMenu {
       0%{
         transform: translateX(-100%)
@@ -176,3 +180,53 @@ html,body,#app{
       }
     }
   }
+// dialog
+
+@keyframes dialog-fade-in {
+  0% {
+      transform: translate3d(0,100% , 0);
+      opacity: 0;
+  }
+  100% {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+  }
+}
+
+@keyframes dialog-fade-out {
+  0% {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+  }
+  100% {
+      transform: translate3d(0, -100%, 0);
+      opacity: 0;
+  }
+}
+
+.dialog-enter-active, .dialog-leave-active {
+  animation: dialog-fade-in 1s;
+}
+.dialog-enter, .dialog-leave-to {
+  animation: dialog-fade-out 1s;
+}
+.dialog{
+  position: fixed;
+  background:rgba(0,0,0,0.5);
+  z-index:999;
+  left:0;
+  top:0;
+  right:0;
+  bottom: 0;
+  overflow: hidden;
+  // animation: dialog-fade-in 1s;
+  .dialog_content{
+    position: absolute;
+    width:30%;
+    height:50%;
+    background:#fff;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+  }
+}

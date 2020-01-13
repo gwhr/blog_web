@@ -264,12 +264,46 @@
     padding:0 20px;
     .edit-card{
         width:40%;
+        position: relative;
         .edit_content{
             width:100%;
             height:100%;
             border:none;
             box-shadow: 0.5rem 0 0.5rem -0.5rem #aaa;
             background:transparent;
+            resize:none;
+            // overflow: hidden;
         }
+        .edit_title{
+            font-size:18px;
+        }
+    }
+    .edit_save,.edit_tags,.edit_classify{
+      position: fixed;
+      left:50%;
+      top:50%;
+      width:3.5rem;
+      height:3.5rem;
+      transform: translate(-50%,-50%);
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      border-radius:50%;
+      box-shadow: 0 0 0.6rem 0 #aaa;
+      background: #f6f6f6;
+      transition: all 0.5s;
+      @include cursor;
+      .iconfont{
+        font-size:1.8rem;
+      }
+      &:hover{
+        background: rgba(96,126,121,.3);
+      }
+    }
+    .edit_classify{
+        top:40%;
+    }
+    .edit_tags{
+        top:30%;
     }
 }
