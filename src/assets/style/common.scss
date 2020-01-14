@@ -222,11 +222,32 @@ html,body,#app{
   // animation: dialog-fade-in 1s;
   .dialog_content{
     position: absolute;
-    width:30%;
-    height:50%;
+    width:20%;
+    height:15%;
     background:#fff;
     left:50%;
     top:50%;
     transform: translate(-50%,-50%);
+    border-radius: 1rem;
+    box-sizing: border-box;
+    padding:20px;
+    .dialog_button{
+      margin-top:20px;
+      display:flex;
+      justify-content: center;
+      span{
+        @include cursor;
+      }
+    }
   }
+}
+// 弹出框
+.popover{
+  position: absolute;
+  padding:20px;
+  left:102%;
+  bottom:-55%;
+  background:#fff;
+  z-index:555;
+  border-radius:5%;
 }
