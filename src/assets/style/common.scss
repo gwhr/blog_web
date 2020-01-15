@@ -241,6 +241,14 @@ html,body,#app{
     }
   }
 }
+@keyframes fadenum {
+  0% {
+      opacity: 0
+    }
+    100% {
+      opacity: 1
+    }
+}
 // 弹出框
 .popover{
   position: absolute;
@@ -250,4 +258,5 @@ html,body,#app{
   background:#fff;
   z-index:555;
   border-radius:5%;
+  animation: fadenum 0.5s ;
 }

@@ -15,5 +15,13 @@ export const article= {
                 return value.data.data
             }
         })
+    },
+    // 保存文章
+    articleAdd(params){
+        return http.request(`/article/add`, 'post',params).then(value=>{
+            if(value.data.code == 200){
+                return value.data.data
+            }
+        })
     }
 }
