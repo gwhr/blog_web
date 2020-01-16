@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2019-09-04 16:13:00
- * @LastEditTime : 2020-01-10 15:07:51
+ * @LastEditTime : 2020-01-16 15:47:15
  * @LastEditors  : Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \个人学习e:\blogweb\src\components\login\login.vue
@@ -11,14 +11,14 @@
         <div class="login_div">
                 <div class="login_form">
                     <label for="account">账号：</label>
-                    <input type="text" name="account">
+                    <input type="text" name="account" v-model="name">
                 </div>
                 <div class="login_form">
-                    <label for="account">密码：</label>
-                    <input type="text" name="account">
+                    <label for="password">密码：</label>
+                    <input type="text" name="password" v-model="password">
                 </div>
                 <div class="login_btns">
-                    <div class="login_btn" >
+                    <div class="login_btn" @click="login">
                         登陆
                     </div>
                     <div class="login_btn" @click="visit">
@@ -33,7 +33,8 @@
 export default {
     data(){
         return {
-
+            name:'',
+            password:''
         }
     },
     methods:{
@@ -41,6 +42,13 @@ export default {
             this.$router.push({
                 path:'/backStage'
             })
+        },
+        login(){
+            let params = {
+                name:this.name,
+                password:this.password
+            }
+            this.globalApi.api.login.login(params)
         }
     }
 }

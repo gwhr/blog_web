@@ -20,8 +20,25 @@ export const article= {
     articleAdd(params){
         return http.request(`/article/add`, 'post',params).then(value=>{
             if(value.data.code == 200){
-                return value.data.data
+                return value.data
             }
         })
-    }
+    },
+    // 删除文章
+    articleDelete(params){
+        return http.request(`/article/delete`, 'post',params).then(value=>{
+            if(value.data.code == 200){
+                return value.data
+            }
+        })
+    },
+}
+export const login = {
+    login(params){
+        return http.request(`/login`, 'post',params).then(value=>{
+            if(value.data.code == 200){
+                return value.data
+            }
+        })
+    },
 }

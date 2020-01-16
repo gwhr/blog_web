@@ -8,23 +8,39 @@
                 <div class="backStage_date">日期</div>
                 <div class="backStage_make">操作</div>
             </li>
-            <li class="backStage_content" v-for="item in 10">
+            <li class="backStage_content" v-for="item in articleList" :key="item.id">
                 <div class="backStage_title">
-                    测试标题
+                    {{item.title}}
                 </div>
                 <div class="backStage_classify">
-                    测试标题
+                    <span v-if="item.classify == 1">
+                        博客
+                    </span>
+                    <span v-if="item.classify == 2">
+                        HTML
+                    </span>
                 </div>
                 <div class="backStage_tag">
-                    测试标题
+                    <span v-if="item.tag == 1">
+                        Js
+                    </span>
+                    <span v-if="item.tag == 2">
+                        HTML
+                    </span>
+                    <span v-if="item.tag == 3">
+                        Vue
+                    </span>
+                    <span v-if="item.tag == 4">
+                        Node
+                    </span>
                 </div>
                 <div class="backStage_date">
-                    测试标题
+                    {{timestampToTime(item.createTime)}}
                 </div>
                 <div class="backStage_make">
                     <span class="iconfont icon-bianji" @click="toEdit">
                     </span>
-                    <span class="iconfont icon-shanchu">
+                    <span class="iconfont icon-shanchu" @click="toDelete(item)">
                     </span>
                 </div>
             </li>
@@ -45,6 +61,19 @@ export default {
                 name:'edit',
                 params:{
                     id
+                }
+            })
+        },
+        // 删除
+        toDelete(item){
+            let params={
+                id:item.id
+            }
+            this.globalApi.api.article.articleDelete(params)
+            .then(value=>{
+                console.log(value)
+                if(value.code == 200){
+                    this.getList();
                 }
             })
         },

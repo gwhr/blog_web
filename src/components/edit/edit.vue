@@ -109,7 +109,6 @@ export default {
     },
     methods:{
         changeSHow(){
-            console.log(222)
             this.tagsshow = false;
             this.classifyshow = false;
         },
@@ -133,17 +132,17 @@ export default {
                 content:this.compiledMarkdown,
                 describe:this.describe,
             }
-            console.log(params)
-            return
             this.globalApi.api.article.articleAdd(params)
             .then(value=>{
-                console.log(value)
+                if(value.code == 200){
+                    this.$router.go(-1)
+                }
             })
         },
         // 获取简介
         getDescribe(){
             let compiledMarkdown = document.getElementById('compiledMarkdown');
-            this.describe = compiledMarkdown.getElementsByTagName('blockquote')[0].text;
+            this.describe = compiledMarkdown.getElementsByTagName('blockquote')[0].outerHTML;
 
         }
     }
