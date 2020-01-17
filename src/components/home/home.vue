@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-10 15:45:49
- * @LastEditTime : 2020-01-13 13:52:22
+ * @LastEditTime : 2020-01-17 16:41:18
  * @LastEditors  : Please set LastEditors
  -->
 <template>
@@ -23,7 +23,7 @@
         <span class="login" @click="login">
                 <i class="iconfont icon-login-"></i>
         </span>
-        <span class="home">
+        <span class="home" @click="toHome">
                 <i class="iconfont icon-1"></i>
         </span>
     </div>
@@ -42,6 +42,11 @@ export default {
         login(){
             this.$router.push({
                 path:'/login'
+            })
+        },
+        toHome(){
+            this.$router.push({
+                path:'/'
             })
         }
     },

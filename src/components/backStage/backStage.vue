@@ -38,7 +38,7 @@
                     {{timestampToTime(item.createTime)}}
                 </div>
                 <div class="backStage_make">
-                    <span class="iconfont icon-bianji" @click="toEdit">
+                    <span class="iconfont icon-bianji" @click="toEdit(item.id)">
                     </span>
                     <span class="iconfont icon-shanchu" @click="toDelete(item)">
                     </span>

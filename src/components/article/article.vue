@@ -18,7 +18,7 @@
                       
                 </div>
             </div>
-            <div v-html="article.content"></div>
+            <div v-html="marked(article.content)"></div>
         </article>
     </div>
 </template>

@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2019-09-04 16:13:00
- * @LastEditTime : 2020-01-16 15:47:15
+ * @LastEditTime : 2020-01-17 15:48:34
  * @LastEditors  : Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \个人学习e:\blogweb\src\components\login\login.vue
@@ -49,6 +49,14 @@ export default {
                 password:this.password
             }
             this.globalApi.api.login.login(params)
+            .then(value=>{
+                console.log(value)
+                let token = value.data;
+                this.storeSession.save('token',token)
+                this.$router.push({
+                    path:'/backStage'
+                })
+            })
         }
     }
 }

@@ -46,6 +46,9 @@ export default {
             this.globalApi.api.article.articleList(params)
             .then(value=>{
                 this.articleList = value;
+                this.articleList.forEach(v=>{
+                    v.content = this.marked(v.content)
+                })
             })
         }
     }
