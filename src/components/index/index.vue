@@ -7,7 +7,7 @@
                         {{item.title}}
                     </span>
                     <span class='time'>
-                        {{item.createTime}}
+                        {{timestampToTime(item.createTime)}}
                     </span>
                 </h1>
                 <div class="content" v-html='item.content'></div>

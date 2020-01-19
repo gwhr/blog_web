@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-03 22:04:13
- * @LastEditTime : 2020-01-10 17:06:25
+ * @LastEditTime : 2020-01-19 13:31:44
  * @LastEditors  : Please set LastEditors
  */
 import Vue from 'vue'
@@ -70,6 +70,12 @@ export default new Router({
           name:'edit',
           meta:{index:102},
           component:IMPORT('edit/edit'),
+        },
+        {
+          path:'/add',
+          name:'add',
+          meta:{index:102},
+          component:IMPORT('add/add'),
         },
       ]
     },

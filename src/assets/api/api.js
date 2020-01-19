@@ -17,15 +17,15 @@ export const article= {
         })
     },
     // 保存文章
-    // articleAdd(params){
-    //     return http.request(`/article/add`, 'post',params).then(value=>{
-    //         if(value.data.code == 200){
-    //             return value.data
-    //         }
-    //     })
-    // },
-    // 更新文章
     articleAdd(params){
+        return http.request(`/article/add`, 'post',params).then(value=>{
+            if(value.data.code == 200){
+                return value.data
+            }
+        })
+    },
+    // 更新文章
+    articleUpdate(params){
         return http.request(`/article/update`, 'post',params).then(value=>{
             if(value.data.code == 200){
                 return value.data
@@ -37,6 +37,22 @@ export const article= {
         return http.request(`/article/delete`, 'post',params).then(value=>{
             if(value.data.code == 200){
                 return value.data
+            }
+        })
+    },
+    // 获取标签列表
+    tagList(){
+        return http.request(`/tag/get`, 'post').then(value=>{
+            if(value.data.code == 200){
+                return value.data.data
+            }
+        })
+    },
+    // 获取分类列表
+    classifyList(){
+        return http.request(`/classify/get`, 'post').then(value=>{
+            if(value.data.code == 200){
+                return value.data.data
             }
         })
     },

@@ -60,7 +60,7 @@
         padding: 1em;
         line-height: 1.5;
         color: #ccc;
-        // background: #2d2d2d;
+        background: #2d2d2d;
     }
     .language-js{
         font-family: Consolas,Monaco,"Andale Mono","Ubuntu Mono",monospace;
@@ -84,6 +84,9 @@
         background: rgba(96,126,121,.2);
         padding: 0 .4rem;
         border-radius: .2rem;
+    }
+    code.language-js  {
+        background:none;
     }
     .article_title{
         font-weight: 400;
@@ -230,6 +233,10 @@
     .backStage_list{
         margin-bottom:10px;
         font-size:14px;
+        .backStage_title,.backStage_classify,.backStage_tag,.backStage_date,.backStage_make{
+            flex:1;
+            text-align: center;
+        }
     }
     .backStage_content{
         color:#666;
@@ -237,6 +244,10 @@
         padding:10px 0;
         font-size:14px;
         @include cursor;
+        .backStage_title,.backStage_classify,.backStage_tag,.backStage_date,.backStage_make{
+            flex:1;
+            text-align: center;
+        }
         &:hover{
             background:rgba(96,126,121,.58);
         }

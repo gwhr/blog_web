@@ -27,11 +27,25 @@
       "unicode_decimal": 59138
     },
     {
+      "icon_id": "1278345",
+      "name": "xinzeng",
+      "font_class": "xinzeng1",
+      "unicode": "e626",
+      "unicode_decimal": 58918
+    },
+    {
       "icon_id": "1800699",
       "name": "标签",
       "font_class": "tag",
       "unicode": "e649",
       "unicode_decimal": 58953
+    },
+    {
+      "icon_id": "6540393",
+      "name": "新增",
+      "font_class": "xinzeng",
+      "unicode": "e607",
+      "unicode_decimal": 58887
     },
     {
       "icon_id": "6943168",

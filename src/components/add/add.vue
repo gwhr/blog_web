@@ -65,7 +65,7 @@ export default {
         body.removeEventListener('click',this.changeSHow)
     },
     created() {
-            this.articleDetails();
+        
     },
     data(){
         return {
@@ -106,7 +106,6 @@ export default {
             ],
             selectTags:{},
             selectClassify:{},
-            title:'萨达萨达',
             describe:'',     //描述
         }
     },
@@ -125,24 +124,25 @@ export default {
             
             this[`${name}show`]=!this[`${name}show`];
         },
-        // 编辑保存
+        
         save(){
             this.getDescribe();
-            let id = this.$route.params.id;
             let params = {
                 title:this.article.title,
                 tag:this.selectTags.id,
                 classify:this.selectClassify.id,
                 content:this.article.content,
                 describe:this.describe,
-                id,
             }
-            this.globalApi.api.article.articleUpdate(params)
+                // 新增保存
+            this.globalApi.api.article.articleAdd(params)
             .then(value=>{
                 if(value.code == 200){
                     this.$router.go(-1)
                 }
             })
+            
+            
         },
         // 获取简介
         getDescribe(){
@@ -150,15 +150,6 @@ export default {
             this.describe = compiledMarkdown.getElementsByTagName('blockquote')[0].outerHTML;
 
         },
-        articleDetails(){
-            let params = {
-                id:this.$route.params.id
-            }
-            this.globalApi.api.article.articleDetails(params)
-            .then(value=>{
-                this.article = value;
-            })
-        }
     }
 }
 </script>

@@ -136,7 +136,7 @@ html,body,#app{
       position: relative;
       
     }
-    .login,.home{
+    .login,.home,.addActirle{
       position: absolute;
       right:2rem;
       top:50%;
@@ -161,6 +161,10 @@ html,body,#app{
     }
     .home{
       top:60%;
+      transform: translateY(-50%);
+    }
+    .addActirle{
+      top:70%;
       transform: translateY(-50%);
     }
     @keyframes leftMenu {

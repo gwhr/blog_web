@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-10 15:45:49
- * @LastEditTime : 2020-01-17 16:41:18
+ * @LastEditTime : 2020-01-19 15:20:00
  * @LastEditors  : Please set LastEditors
  -->
 <template>
@@ -20,17 +20,20 @@
                 </span>
             </div>
         </div>
-        <span class="login" @click="login">
+        <span class="login" @click="login" title="登陆">
                 <i class="iconfont icon-login-"></i>
         </span>
-        <span class="home" @click="toHome">
+        <span class="home" @click="toHome" title="首页">
                 <i class="iconfont icon-1"></i>
+        </span>
+        <span class="addActirle" @click="toEdit" title="新增">
+                <i class="iconfont icon-xinzeng1"></i>
         </span>
     </div>
 </template>
 <script>
 import PerfectScrollbar from 'perfect-scrollbar';
-
+let ps,container;
 export default {
     data(){
         return {
@@ -48,11 +51,16 @@ export default {
             this.$router.push({
                 path:'/'
             })
+        },
+        toEdit(){
+            this.$router.push({
+                path:'/add'
+            })
         }
     },
     mounted(){
-        const container = document.querySelector('#rightCol');
-        const ps = new PerfectScrollbar(container,{
+         container = document.querySelector('#rightCol');
+         ps = new PerfectScrollbar(container,{
             suppressScrollX:true
         });
     },
@@ -71,6 +79,7 @@ export default {
             }else{
                 this.leftSHow = false;
             }
+            container.scrollTop = 0;
         }
     },
 }
