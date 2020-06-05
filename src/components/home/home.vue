@@ -2,7 +2,7 @@
  * @Description: In User Settings Edit
  * @Author: your name
  * @Date: 2019-09-10 15:45:49
- * @LastEditTime : 2020-01-19 15:20:00
+ * @LastEditTime : 2020-01-31 11:07:32
  * @LastEditors  : Please set LastEditors
  -->
 <template>
@@ -74,7 +74,7 @@ export default {
             }else{
                 this.transitionName = 'slide-left'
             }
-            if(to.path.includes('edit')){
+            if(to.path.includes('edit','add')){
                 this.leftSHow = true;
             }else{
                 this.leftSHow = false;

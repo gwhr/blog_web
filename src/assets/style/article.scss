@@ -171,6 +171,10 @@
             margin-bottom:20px;
             @include cursor;
             @include fontSize;
+            .title_name{
+                width:100px ;
+                text-align: center;
+            }
             .listLine{
                 flex:1;
                 border-bottom:1px solid #7b7b7b;

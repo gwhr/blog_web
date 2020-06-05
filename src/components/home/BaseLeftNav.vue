@@ -1,3 +1,11 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-01-20 18:02:10
+ * @LastEditTime: 2020-01-31 11:02:41
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \bolg_web\src\components\home\BaseLeftNav.vue
+ -->
 <template>
     <nav>
         <div class="header-info">
@@ -28,10 +36,10 @@ export default {
                     tit:'首页',
                     link:'/'
                 },
-                {
-                    tit:'归档',
-                    link:'/file'
-                },
+                // {
+                //     tit:'归档',
+                //     link:'/file'
+                // },
                 {
                     tit:'分类',
                     link:'/classify'

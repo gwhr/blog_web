@@ -1,3 +1,11 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-01-20 18:02:10
+ * @LastEditTime : 2020-02-07 11:30:11
+ * @LastEditors  : Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \bolg_web\src\components\classify\classify.vue
+ -->
 <template>
     <div class="classify-card">
         <ul class="classify-name">
@@ -6,15 +14,15 @@
            </li>
         </ul>
         <ul class="classify-list">
-            <li v-for="(item,index) in classifyList" :key="index" >
-                <div>
-                    {{item.name}}
+            <li v-for="(item,index) in classifyList" :key="index" @click="toArticle(item.id)">
+                <div class="title_name">
+                    {{item.title}}
                 </div>
                 <div class="listLine">
 
                 </div>
                 <div class="listTime">
-                    {{item.time}}
+                    {{timestampToTime(item.createTime)}}
                 </div>
             </li>
         </ul>
@@ -28,10 +36,12 @@ export default {
         }
     },
     created() {
+        this.init();
     },
     data(){
         return {
             activeIindex:0,
+            selectClassify:1,
             classify:[
                 {
                     name:'web'
@@ -43,27 +53,53 @@ export default {
                     name:'奇妙的JS'
                 },
             ],
-            classifyList:[
-                {
-                    name:'博客探索',
-                    time:'2019/03/20/20:50:29'
-                },
-                {
-                    name:'博客探索',
-                    time:'2019/03/20/20:50:29'
-                },
-                {
-                    name:'博客探索',
-                    time:'2019/03/20/20:50:29'
-                },
-            ]
+            classifyList:[]
         }
     },
     methods:{
+        init(){
+            this.getClassifyList().then(value=>{
+                this.selectClassify = this.classify[0].id;
+                this.getList();
+            })
+        },
+        toArticle(id){
+            this.$router.push({
+                name:`article`,
+                params:{
+                    id
+                }
+            })
+        },
         // 分类切换
         changeClassify(index){
             this.activeIindex = index;
-        }
+            this.selectClassify = this.classify[index].id;
+            this.getList();
+        },
+        // 获取列表
+        getList(){
+            let params = {
+                page:1,
+                size:8,
+                classify:this.selectClassify
+            }
+            this.globalApi.api.article.articleList(params)
+            .then(value=>{
+                this.classifyList = value;
+                this.classifyList.forEach(v=>{
+                    v.content = this.marked(v.content)
+                })
+            })
+        },
+        // 获取分类
+        getClassifyList(){
+           return this.globalApi.api.article.classifyList()
+            .then(value=>{
+                console.log(value);
+               return this.classify = value;
+            })
+        },
     }
 }
 </script>
